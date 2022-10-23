@@ -53,6 +53,7 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
     font-size: 20px;
     color: inherit;
+    margin-bottom: 20px;
 }
 
 /* City search bar placeholder */
@@ -63,6 +64,7 @@ body {
 /* Weather today format */
 .weather-today {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .weather-image {
@@ -80,4 +82,56 @@ body {
     font-size: 30px;
     margin: 10px 0;
     font-weight: 400;
+}
+
+/* Weather details icons */
+.weather-indicator::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.weather-indicator--humidity::before {
+    background-image: url(../images/humidity.png);
+}
+
+.weather-indicator--wind::before {
+    background-image: url(../images/wind.png);
+}
+
+.weather-indicator--pressure::before {
+    background-image: url(../images/pressure.png);
+}
+
+.weather-temperature {
+    font-size: 60px;
+}
+
+/* Weather forcast section */
+.weather-forecast {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.weather-forecast-icon {
+    max-width: 50%;
+}
+
+/* Add background color*/
+.weather-forecast-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 0 10px 10px;
+    padding: 30px 5px 20px;
+    box-sizing: border-box;
+    min-width: 150px;
+    width: calc(20% - 20px);
+    flex-grow: 1;
 }
