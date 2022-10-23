@@ -66,6 +66,18 @@ body {
     justify-content: space-between;
 }
 .weather-image {
-    width: 10vmin; /*Note: vmin is a relative measurement */
+    width: 30vmin; /*Note: vmin is a relative measurement */
     align-self: center;
+}
+
+.weather-city {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.weather-day {
+    font-size: 30px;
+    margin: 10px 0;
+    font-weight: 400;
 }
