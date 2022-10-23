@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="weather">
+      <!-- Enter your city name -->
+      <input type="search" class="weather-search" placeholder="Your city" />
+
+      <!-- Display today's weather information -->
+      <div class="weather-today">
+        <div class="weather-details">
+          <!-- Show city name -->
+          <h2 class="weather-city">City</h2>
+
+          <!-- Show day -->
+          <p class="weather-day">Day</p>
+
+          <!-- Show weather detailed info -->
+          <div class="weather-current">
+            <p class="weather-indicator weather-indicator--humidity">
+              <span class="value">50</span>%
+            </p>
+            <p class="weather-indicator weather-indicator--wind">
+              <span class="speed">West, 5</span>m/s
+            </p>
+            <p class="weather-indicator weather-indicator--pressure">
+              <span class="value">1050</span>hPa
+            </p>
+          </div>
+        </div>
+
+        <!-- Weather image -->
+        <img
+          src="images/7795629_sun_day_weather.png"
+          alt="sun-day"
+          class="weather-image"
+        />
+
+        <!-- Weather temperature -->
+        <div class="weather-temperature">
+          <span class="value">+25</span> &deg;C
+        </div>
+      </div>
+      <div class="weather-forecast">
+        <article class="weather-forecast-item">
+          <img
+            src="images/7795629_sun_day_weather.png"
+            alt="sun-day"
+            class="weather-forecast-icon"
+          />
+          <h2 class="weather-forecast-day"></h2>
+          <h2 class="weather-forecast-temperature">
+            <span class="value">+25</span> &deg;C
+          </h2>
+        </article>
+        <article class="weather-forecast-item">
+          <img
+            src="images/7795629_sun_day_weather.png"
+            alt="sun-day"
+            class="weather-forecast-icon"
+          />
+          <h2 class="weather-forecast-day"></h2>
+          <h2 class="weather-forecast-temperature">
+            <span class="value">+25</span> &deg;C
+          </h2>
+        </article>
+        <article class="weather-forecast-item">
+          <img
+            src="images/7795629_sun_day_weather.png"
+            alt="sun-day"
+            class="weather-forecast-icon"
+          />
+          <h2 class="weather-forecast-day"></h2>
+          <h2 class="weather-forecast-temperature">
+            <span class="value">+25</span> &deg;C
+          </h2>
+        </article>
+        <article class="weather-forecast-item">
+          <img
+            src="images/7795629_sun_day_weather.png"
+            alt="sun-day"
+            class="weather-forecast-icon"
+          />
+          <h2 class="weather-forecast-day"></h2>
+          <h2 class="weather-forecast-temperature">
+            <span class="value">+25</span> &deg;C
+          </h2>
+        </article>
+        <article class="weather-forecast-item">
+          <img
+            src="images/7795629_sun_day_weather.png"
+            alt="sun-day"
+            class="weather-forecast-icon"
+          />
+          <h2 class="weather-forecast-day"></h2>
+          <h2 class="weather-forecast-temperature">
+            <span class="value">+25</span> &deg;C
+          </h2>
+        </article>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

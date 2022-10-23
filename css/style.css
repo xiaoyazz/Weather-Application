@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans.woff2) format('woff2'), 
+         url(../fonts/OpenSans.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Light.woff2) format('woff2'), 
+         url(../fonts/OpenSans-Light.woff) format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Semibold.woff2) format('woff2'), 
+         url(../fonts/OpenSans-Semibold.woff) format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Bold.woff2) format('woff2'), 
+         url(../fonts/OpenSans-Bold.woff) format('woff');
+    font-weight: 700;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle, #afafaf, #9994a7, #85789d, #745c91, #654083);
+    color: white;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.weather {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+    white-space: nowrap; /*Span text numbers & unit should stay in one line*/
+}
+
+/* City search bar */
+.weather-search {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 20px;
+    color: inherit;
+}
+
+/* City search bar placeholder */
+.weather-search::placeholder {
+    color: #fff;
+}
+
+/* Weather today format */
+.weather-today {
+    display: flex;
+    justify-content: space-between;
+}
+.weather-image {
+    width: 10vmin; /*Note: vmin is a relative measurement */
+    align-self: center;
+}
