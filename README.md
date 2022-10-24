@@ -1,5 +1,5 @@
 # Weather-Application
-<p><img width="700" src="https://user-images.githubusercontent.com/84748829/197590953-c4af6752-0d74-46a9-a37f-0f85ee0441b0.JPG"></p>
+<p><img width="700" src="https://user-images.githubusercontent.com/84748829/197599378-531d1651-504e-4420-bff2-9d4c8bff83d3.JPG"></p>
 
 - A practice program to display weather in different city
 - Provide location, weather, humidity, wind, pressure, and a 5-day weather forecast
