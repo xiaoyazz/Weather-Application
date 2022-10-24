@@ -40,6 +40,8 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 300;
     font-size: 22px;
+    filter: blur(15px); /* Apply a blur effect when loading the page */
+    transition: filter 0.5s;
 }
 
 h5 {

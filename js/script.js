@@ -20,6 +20,7 @@ let weatherAPIKey = '84f4dde0ea6a0bf2e3864301871f625e';
 let weatherBaseEndPoint = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + weatherAPIKey;
 let forecastBaseEndPoint = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&appid=' + weatherAPIKey;
 let geocodingBaseEndPoint = 'http://api.openweathermap.org/geo/1.0/direct?&limit=5&appid='+ weatherAPIKey + '&q=';
+let datalist = document.getElementById('suggestions');
 
 // Get images in groups
 let weatherImages = [
@@ -81,22 +82,29 @@ let getWeatherByCityID = async(id) => {
     forecastList.forEach(day => {
         let date = new Date(day.dt_txt.replace(' ', 'T')); // Convert the date & time in the MDN dates format
         let hours = date.getHours(); // Get the time of the day
-            console.log(hours);
         if (hours === 12) { // If the hour is 12, then add the day to the daily array
             daily.push(day);
         }
     })
     return daily;
 }
+let weatherForCity = async (city) => {
+    let weather = await getWeatherByCityName(city); // Call the getWeatherByCityName function
+    console.log(weather);
+        let cityID = weather.id;
+    if (weather.cod === '404') {
+        return;
+    } else {
+        updateCurrentWeather(weather);
+        let forecast = await getWeatherByCityID(cityID);
+        updateForecast(forecast);
+    }
+}
 
 // When user search for a city, there is an action should be taken
 searchInp.addEventListener('keydown', async (e) => {  // e stores the event
     if (e.keyCode === 13) { // If user press the enter key
-        let weather = await getWeatherByCityName(searchInp.value); // Call the getWeatherByCityName function
-        let cityID = weather.id;
-        updateCurrentWeather(weather);
-        let forecast = await getWeatherByCityID(cityID);
-        updateForecast(forecast);
+        weatherForCity(searchInp.value);
     }
 })
 
@@ -107,8 +115,11 @@ searchInp.addEventListener('input', async () => {
     }
     let endpoint = geocodingBaseEndPoint + searchInp.value;
     let result = await (await fetch(endpoint)).json();
+    datalist.innerHTML = ''; // Remove the previous searching history
     result.forEach((city) => { // Get the correct city data with country and state
-        console.log(`${city.name} ${city.state ? ',' + city.state : ''}, ${city.country}`);
+        let option = document.createElement('option');
+        option.value = `${city.name}${city.state ? ', ' + city.state : ''}, ${city.country}`;
+        datalist.appendChild(option);
     })
 })
 
@@ -173,5 +184,12 @@ let updateForecast = (forecast) => {
 
 // A function to get the current day
 let dayOfWeek = (dt = new Date().getTime()) => {
-    return new Date(dt).toLocaleDateString('en-EN', { 'weekday': 'long' }); // Get the local day and display in English
+    return new Date(dt).toLocaleDateString('en-EN', {'weekday': 'long'}); // Get the local day and display in English
 }
+
+// A function to show current location and weather when user open my page 
+let init = async () => {
+    await weatherForCity('Toronto'); // Use Toronto as default
+    document.body.style.filter = 'blur(0)';
+}
+init();

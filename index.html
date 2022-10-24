@@ -15,7 +15,15 @@
   <body>
     <div class="weather">
       <!-- Enter your city name -->
-      <input type="search" class="weather-search" placeholder="Your city" />
+      <input
+        type="search"
+        list="suggestions"
+        class="weather-search"
+        placeholder="Your city"
+      />
+
+      <!-- Display location suggestions -->
+      <datalist id="suggestions"></datalist>
 
       <!-- Display today's weather information -->
       <div class="weather-today">
