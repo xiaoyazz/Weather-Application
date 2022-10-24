@@ -90,7 +90,7 @@ let getWeatherByCityID = async(id) => {
 }
 let weatherForCity = async (city) => {
     let weather = await getWeatherByCityName(city); // Call the getWeatherByCityName function
-    //console.log(weather);
+    console.log(weather);
         let cityID = weather.id;
     if (weather.cod === '404') {
         return;
