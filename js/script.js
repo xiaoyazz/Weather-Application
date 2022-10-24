@@ -19,7 +19,7 @@ let forecastBlock = document.querySelector('.weather-forecast');
 let weatherAPIKey = '84f4dde0ea6a0bf2e3864301871f625e';
 let weatherBaseEndPoint = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + weatherAPIKey;
 let forecastBaseEndPoint = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&appid=' + weatherAPIKey;
-let geocodingBaseEndPoint = 'http://api.openweathermap.org/geo/1.0/direct?&limit=5&appid='+ weatherAPIKey + '&q=';
+let geocodingBaseEndPoint = 'https://api.openweathermap.org/geo/1.0/direct?&limit=5&appid='+ weatherAPIKey + '&q=';
 let datalist = document.getElementById('suggestions');
 
 // Get images in groups
@@ -90,7 +90,7 @@ let getWeatherByCityID = async(id) => {
 }
 let weatherForCity = async (city) => {
     let weather = await getWeatherByCityName(city); // Call the getWeatherByCityName function
-    console.log(weather);
+    //console.log(weather);
         let cityID = weather.id;
     if (weather.cod === '404') {
         return;
