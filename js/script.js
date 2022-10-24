@@ -19,6 +19,7 @@ let forecastBlock = document.querySelector('.weather-forecast');
 let weatherAPIKey = '84f4dde0ea6a0bf2e3864301871f625e';
 let weatherBaseEndPoint = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + weatherAPIKey;
 let forecastBaseEndPoint = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&appid=' + weatherAPIKey;
+let geocodingBaseEndPoint = 'http://api.openweathermap.org/geo/1.0/direct?&limit=5&appid='+ weatherAPIKey + '&q=';
 
 // Get images in groups
 let weatherImages = [
@@ -96,7 +97,19 @@ searchInp.addEventListener('keydown', async (e) => {  // e stores the event
         updateCurrentWeather(weather);
         let forecast = await getWeatherByCityID(cityID);
         updateForecast(forecast);
-    } 
+    }
+})
+
+// Add another eventlistener to get the location suggestions
+searchInp.addEventListener('input', async () => {
+    if (searchInp.value.length <= 2) { // Avoid the error when user type the first 2 letters
+        return;
+    }
+    let endpoint = geocodingBaseEndPoint + searchInp.value;
+    let result = await (await fetch(endpoint)).json();
+    result.forEach((city) => { // Get the correct city data with country and state
+        console.log(`${city.name} ${city.state ? ',' + city.state : ''}, ${city.country}`);
+    })
 })
 
 // Display the weather information
