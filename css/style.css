@@ -1,3 +1,9 @@
+/*
+** Weather Application CSS File
+** Created by : Xiaoya Zou
+** Created on: Oct 23, 2022
+*/
+
 @font-face {
     font-family: 'Open Sans';
     src: url(../fonts/OpenSans.woff2) format('woff2'), 
@@ -29,11 +35,16 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-image: radial-gradient(circle, #afafaf, #9994a7, #85789d, #745c91, #654083);
+    background-image: linear-gradient(to left top, #3171d3, #0096ed, #00b2d6, #00c794, #46d339);
     color: white;
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 300;
     font-size: 22px;
+}
+
+h5 {
+    text-align: center;
+    margin: 30px;
 }
 
 .weather {
@@ -50,10 +61,17 @@ body {
     width: 100%;
     padding: 15px 10px;
     border: none;
+    outline: none;
     background-color: rgba(255, 255, 255, 0.15);
     font-size: 20px;
     color: inherit;
     margin-bottom: 20px;
+}
+
+/* City search bar focus style */
+.weather-search:focus {
+    box-shadow: 0 0 6px #fff;
+    border: 0.5px solid #fff;
 }
 
 /* City search bar placeholder */
@@ -68,7 +86,7 @@ body {
     justify-content: space-between;
 }
 .weather-image {
-    width: 30vmin; /*Note: vmin is a relative measurement */
+    width: 26vmin; /*Note: vmin is a relative measurement */
     align-self: center;
 }
 
@@ -118,6 +136,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
 .weather-forecast-icon {
