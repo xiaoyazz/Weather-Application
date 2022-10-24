@@ -1,5 +1,6 @@
 # ☁️ Weather-Application
 <p><img width="600" src="https://user-images.githubusercontent.com/84748829/197621859-bbbaeb06-8ed4-4643-8ca8-74275d5f82de.JPG"></p>
+<p><img width="300" src="https://user-images.githubusercontent.com/84748829/197622624-9deb2ca1-c65c-4cba-b030-55e3c3ef63b4.JPG"></p>
 
 Try it out :) 👉 https://xiaoyazz.github.io/Weather-Application/
 
