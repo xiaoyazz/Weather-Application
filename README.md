@@ -1,6 +1,6 @@
 # ☁️ Weather-Application
 
-- A practice program to display weather in different city
+- An udemy practice program to display weather in different city
 - Provide location, weather, humidity, wind, pressure, and a 5-day weather forecast
 - Responsive on different devices
 - Developed with HTML, CSS, and Javascript
